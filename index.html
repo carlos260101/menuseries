@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style>
+	  <style type="text/css">
+
+
+             * {
+               margin: 0;
+               padding: 0;
+               -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+               box-sizing: border-box;
+             }
+
+             .div {
+            padding: 16px;
+            background-color: #00FF00;
+            width: 100%;
+            height: 100px;
+            background-color: #00FF00;
+      }
+           
+             body {
+               background: #2d2c41;
+               font-family: 'Open Sans', Arial, Helvetica, Sans-serif, Verdana, Tahoma;
+
+
+
+             }
+           
+             ul {
+               list-style-type: none;
+             }
+           
+             a {
+               color: #b63b4d;
+               text-decoration: none;
+             }
+           
+             .accordion {
+               width: 100%;
+               max-width: 95%;
+               margin: 5px auto 20px;
+               background: #252525; /COLOR FONDO
+               -webkit-border-radius: 4px;
+               -moz-border-radius: 4px;
+               border-radius: 4px;
+
+               
+             }
+           
+             .accordion .link {
+               cursor: pointer;
+               display: block;
+               padding: 15px 15px 15px 15px;
+               color: #FFFFFF; /COLOR LETRA DE PANEL INICIO
+               font-size: 14px;
+               font-weight: 700;
+               border-bottom: 1px solid #FFF;
+               position: relative;
+               -webkit-transition: all 0.4s ease;
+               -o-transition: all 0.4s ease;
+               transition: all 0.4s ease;
+             }
+           
+             .accordion li:last-child .link {
+               border-bottom: 0;
+             }
+           
+             .accordion li i {
+               position: absolute;
+               top: 16px;
+               left: 12px;
+               font-size: 18px;
+               color: #FFFFFF; / BARRA HORIZONTAL
+               -webkit-transition: all 0.4s ease;
+               -o-transition: all 0.4s ease;
+               transition: all 0.4s ease;
+             }
+           
+             .accordion li i.fa-chevron-down {
+               right: 12px;
+               left: auto;
+               font-size: 16px;
+             }
+           
+             .accordion li.open .link {
+               color: #b63b4d;
+             }
+           
+             .accordion li.open i {
+               color: #b63b4d;
+             }
+           
+             .accordion li.open i.fa-chevron-down {
+               -webkit-transform: rotate(180deg);
+               -ms-transform: rotate(180deg);
+               -o-transform: rotate(180deg);
+               transform: rotate(180deg);
+             }
+           
+            
+           
+             /**
+               * Submenu
+               -----------------------------*/
+             .submenu {
+               display: none;
+               background: #fff;  /fondo del submenu
+               font-size: 14px;
+             }
+           
+             .submenu li {
+               border-bottom: 1px solid #4b4a5e;
+             }
+           
+             .submenu a {
+               display: block;
+               text-decoration: none;
+               color: #000000; //color del texto en el submenu 
+               padding: 15px;
+               padding-left: 15px;
+               margin: 0px; 
+               padding-top: 15px;
+               padding-right: 15px;
+               padding-bottom: 15px;
+               padding-left: 15px;
+               -webkit-transition: all 0.25s ease;
+               -o-transition: all 0.25s ease;
+               transition: all 0.25s ease;
+             }
+           
+             .submenu a:hover {
+               background: #b63b4d;
+               color: #FFF;
+            }
+             
+             .img {
+            padding: 16px;
+            background-color: #00FF00;
+            width: 20%;
+            height: 20px;
+            background-color: #00FF00;
+           }
+
+
+	* {
+	margin:0;
+	padding:0;
+}
+ 
+body {
+	background:#FFFFFA;
+}
+ 
+header {
+	width:100%;
+}
+ 
+header nav {
+	width:90%;
+	max-width:1000px;
+	margin:20px auto;
+	background:#024959;
+}
+ 
+.menu_bar {
+	display:none;
+}
+ 
+header nav ul {
+	overflow:hidden;
+	list-style:none;
+}
+ 
+header nav ul li {
+	float:left;
+}
+ 
+header nav ul li a {
+	color:#fff;
+	padding:20px;
+	display:block;
+	text-decoration:none;
+}
+ 
+header nav ul li span {
+	margin-right:10px;
+}
+ 
+header nav ul li a:hover {
+	background:#037E8C;
+}
+ 
+section {
+	padding:20px;
+}
+ 
+@media screen and (max-width:800px ) {
+	header nav {
+		width:80%;
+		height:100%;
+		left:-100%;
+		margin:0;
+		position: fixed;
+	}
+ 
+	header nav ul li {
+		display:block;
+		float:none;
+		border-bottom:1px solid rgba(255,255,255, .3);
+	}
+ 
+	.menu_bar {
+		display:block;
+		width:100%;
+		background:#ccc;
+	}
+ 
+	.menu_bar .bt-menu {
+		display:block;
+		padding:20px;
+		background:#024959;
+		color:#fff;
+		text-decoration:none;
+		font-weight: bold;
+		font-size:25px;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+ 
+	.menu_bar span {
+		float:right;
+		font-size:40px;
+	}
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?2eqz89');
+  src:  url('fonts/icomoon.eot?2eqz89#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2eqz89') format('truetype'),
+    url('fonts/icomoon.woff?2eqz89') format('woff'),
+    url('fonts/icomoon.svg?2eqz89#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-world:before {
+  content: "\e900";
+}
+.icon-globe:before {
+  content: "\e900";
+}
+.icon-internet:before {
+  content: "\e900";
+}
+.icon-network:before {
+  content: "\e900";
+}
+.icon-play:before {
+  content: "\e907";
+}
+.icon-player:before {
+  content: "\e907";
+}
+.icon-share:before {
+  content: "\e908";
+}
+.icon-social:before {
+  content: "\e908";
+}
+.icon-telegram:before {
+  content: "\e909";
+}
+.icon-brand:before {
+  content: "\e909";
+}
+.icon-social1:before {
+  content: "\e909";
+}
+.icon-whatsapp:before {
+  content: "\e90a";
+}
+.icon-brand1:before {
+  content: "\e90a";
+}
+.icon-social2:before {
+  content: "\e90a";
+}
+.icon-menu:before {
+  content: "\e906";
+}
+.icon-envelop:before {
+  content: "\e905";
+}
+.icon-sphere:before {
+  content: "\e901";
+}
+.icon-globe1:before {
+  content: "\e901";
+}
+.icon-internet1:before {
+  content: "\e901";
+}
+.icon-rocket:before {
+  content: "\e902";
+}
+.icon-jet:before {
+  content: "\e902";
+}
+.icon-speed:before {
+  content: "\e902";
+}
+.icon-spaceship:before {
+  content: "\e902";
+}
+.icon-fast:before {
+  content: "\e902";
+}
+.icon-briefcase:before {
+  content: "\e903";
+}
+.icon-portfolio:before {
+  content: "\e903";
+}
+.icon-suitcase:before {
+  content: "\e903";
+}
+.icon-work:before {
+  content: "\e903";
+}
+.icon-job:before {
+  content: "\e903";
+}
+.icon-employee:before {
+  content: "\e903";
+}
+.icon-home:before {
+  content: "\e904";
+}
+.icon-house:before {
+  content: "\e904";
+}
+.icon-display:before {
+  content: "\e90b";
+}
+
+		
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	<header>
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
+		</div>
+ 
+		<nav>
+			<ul>
+				<li><a href="https://www.google.com.co"><span class="icon-house"></span>Inicio</a></li>
+				<li><a href="#"><span class="icon-display"></span>Peliculas</a></li>
+				<li><a href="#"><span class="icon-display"></span>Series</a></li>
+				<li><a href="#"><span class="icon-display"></span>Tv</a></li>
+				<li><a href="#"><span class="icon-share"></span>Compartir App</a></li>
+			</ul>
+		</nav>
+	</header>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+		$(document).ready(main);
+ 
+var contador = 1;
+ 
+function main(){
+	$('.menu_bar').click(function(){
+		// $('nav').toggle(); 
+ 
+		if(contador == 1){
+			$('nav').animate({
+				left: '0'
+			});
+			contador = 0;
+		} else {
+			contador = 1;
+			$('nav').animate({
+				left: '-100%'
+			});
+		}
+ 
+	});
+ 
+};
+	</script>
+
+	<body style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">      
+          <div align="center"><img src="https://1.bp.blogspot.com/-sf6ksdIW8pk/X0rKlNcCyvI/AAAAAAAABeY/4BLOKR-Pf-89nW-Ze1VlHZfAXIF1g0KPwCLcBGAsYHQ/s996/SERIE%2BEL%2BCARTEL%2BDE%2BLOS%2BSAPOS.png" width="95%";
+            height="10%";></div>
+             <ul id="accordion" class="accordion">
+               <li>
+                 <div class="link">Temporada 1</div>
+                 <ul class="submenu">
+                   <li><a href="#">Capitulo 1</a></li>
+                   <li><a href="#">Capitulo 2</a></li>
+                   <li><a href="#">Capitulo 3</a></li>
+                   <li><a href="#">Capitulo 4</a></li>
+                   <li><a href="#">Capitulo 5</a></li>
+                   <li><a href="#">Capitulo 6</a></li>
+                   <li><a href="#">Capitulo 7</a></li>
+                   <li><a href="#">Capitulo 8</a></li>
+                   <li><a href="#">Capitulo 9</a></li>
+                   <li><a href="#">Capitulo 10</a></li>
+                   <li><a href="#">Capitulo 11</a></li>
+                   <li><a href="#">Capitulo 12</a></li>
+                   <li><a href="#">Capitulo 13</a></li>
+                   <li><a href="#">Capitulo 14</a></li>
+                   <li><a href="#">Capitulo 15</a></li>
+                   <li><a href="#">Capitulo 16</a></li>
+                   <li><a href="#">Capitulo 17</a></li>
+                   <li><a href="#">Capitulo 18</a></li>
+                   <li><a href="#">Capitulo 19</a></li>
+                   <li><a href="#">Capitulo 20</a></li>
+                   <li><a href="#">Capitulo 21</a></li>
+                   <li><a href="#">Capitulo 22</a></li>
+                   <li><a href="#">Capitulo 23</a></li>
+                   <li><a href="#">Capitulo 24</a></li>
+                   <li><a href="#">Capitulo 25</a></li>
+                   <li><a href="#">Capitulo 26</a></li>
+                   <li><a href="#">Capitulo 27</a></li>
+                   <li><a href="#">Capitulo 28</a></li>
+                   <li><a href="#">Capitulo 29</a></li>
+                   <li><a href="#">Capitulo 30</a></li>
+                   <li><a href="#">Capitulo 31</a></li>
+                   <li><a href="#">Capitulo 32</a></li>
+                   <li><a href="#">Capitulo 33</a></li>
+                   <li><a href="#">Capitulo 34</a></li>
+                   <li><a href="#">Capitulo 35</a></li>
+                   <li><a href="#">Capitulo 36</a></li>
+                   <li><a href="#">Capitulo 37</a></li>
+                   <li><a href="#">Capitulo 38</a></li>
+                   <li><a href="#">Capitulo 39</a></li>
+                   <li><a href="#">Capitulo 40</a></li>
+                   <li><a href="#">Capitulo 41</a></li>
+                   <li><a href="#">Capitulo 42</a></li>
+                   <li><a href="#">Capitulo 43</a></li>
+                   <li><a href="#">Capitulo 44</a></li>
+                   <li><a href="#">Capitulo 45</a></li>
+                   <li><a href="#">Capitulo 46</a></li>
+                   <li><a href="#">Capitulo 47</a></li>
+                   <li><a href="#">Capitulo 48</a></li>
+                   <li><a href="#">Capitulo 49</a></li>
+                   <li><a href="#">Capitulo 50</a></li>
+
+
+                 </ul>
+               </li>
+               <li>
+                 <div class="link">Temporada 2<i class="fa fa-chevron-down"></i></div>
+                 <ul class="submenu">
+                   <li><a href="#">Capitulo 1</a></li>
+                   <li><a href="#">Capitulo 2</a></li>
+                   <li><a href="#">Capitulo 3</a></li>
+                   <li><a href="#">Capitulo 4</a></li>
+                   <li><a href="#">Capitulo 5</a></li>
+                   <li><a href="#">Capitulo 6</a></li>
+                   <li><a href="#">Capitulo 7</a></li>
+                   <li><a href="#">Capitulo 8</a></li>
+                   <li><a href="#">Capitulo 9</a></li>
+                   <li><a href="#">Capitulo 0</a></li>
+                   <li><a href="#">Capitulo 11</a></li>
+                   <li><a href="#">Capitulo 12</a></li>
+                   <li><a href="#">Capitulo 13</a></li>
+                   <li><a href="#">Capitulo 14</a></li>
+                   <li><a href="#">Capitulo 15</a></li>
+                   <li><a href="#">Capitulo 16</a></li>
+                   <li><a href="#">Capitulo 17</a></li>
+                   <li><a href="#">Capitulo 18</a></li>
+                   <li><a href="#">Capitulo 19</a></li>
+                   <li><a href="#">Capitulo 20</a></li>
+                   <li><a href="#">Capitulo 21</a></li>
+                   <li><a href="#">Capitulo 22</a></li>
+                   <li><a href="#">Capitulo 23</a></li>
+                   <li><a href="#">Capitulo 24</a></li>
+                   <li><a href="#">Capitulo 25</a></li>
+                   <li><a href="#">Capitulo 26</a></li>
+                   <li><a href="#">Capitulo 27</a></li>
+                   <li><a href="#">Capitulo 28</a></li>
+                   <li><a href="#">Capitulo 29</a></li>
+                   <li><a href="#">Capitulo 30</a></li>
+                   <li><a href="#">Capitulo 31</a></li>
+                   <li><a href="#">Capitulo 32</a></li>
+                   <li><a href="#">Capitulo 33</a></li>
+                   <li><a href="#">Capitulo 34</a></li>
+                   <li><a href="#">Capitulo 35</a></li>
+                   <li><a href="#">Capitulo 36</a></li>
+                   <li><a href="#">Capitulo 37</a></li>
+                   <li><a href="#">Capitulo 38</a></li>
+                   <li><a href="#">Capitulo 39</a></li>
+                   <li><a href="#">Capitulo 40</a></li>
+                   <li><a href="#">Capitulo 41</a></li>
+                   <li><a href="#">Capitulo 42</a></li>
+                   <li><a href="#">Capitulo 43</a></li>
+                   <li><a href="#">Capitulo 44</a></li>
+                   <li><a href="#">Capitulo 45</a></li>
+                   <li><a href="#">Capitulo 46</a></li>
+                   <li><a href="#">Capitulo 47</a></li>
+                   <li><a href="#">Capitulo 48</a></li>
+                   <li><a href="#">Capitulo 49</a></li>
+                   <li><a href="#">Capitulo 50</a></li>
+                 </ul>
+               </li>
+
+
+                 <li>
+                  <div class="link">✴SERIES MAS VALORADA✴</div>
+                  <ul class="submenu">   
+                  <li><a href="http://go:genius">1 GENIUS</a></li>
+                  <li><a href="http://go:curon">2 CURON</a></li>
+                  <li><a href="http://go:patronmal">3 EL PATRON DEL MAL</a></li>
+                  <li><a href="http://zodiaco">4 LOS CABALLEROS DEL ZODIACO</a></li>
+                  <li><a href="http://go:hernan">5 HERNAN</a></li>
+                  <li><a href="http://go:grimm">6 GRIMM</a></li>
+                  <li><a href="http://go:alientv1">7 ALIEN TV</a></li>
+                  <li><a href="http://go:maldita">8 MALDITA</a></li>
+                  <li><a href="http://go:oasis">9 VIS A VIS EL OASIS</a></li>
+                  <li><a href="http://go:sinsenos">10 SIN SENOS NO HAY PARAISO</a></li>
+                  <li><a href="http://go:the100">11 THE 100</a></li>
+                  <li><a href="http://go:elcartel1">12 EL CARTEL DE LOS SAPOS</a></li>
+                  <li><a href="http://go:stitchers">13 STITCHERS</a></li>
+                  <li><a href="http://go:dragonball">14 DRAGON BALL </a></li>
+                  <li><a href="http://go:dragonbal2">15 DRAGON BALL Z</a></li>
+                  <li><a href="http://go:dragonsupe">16 DRAGON BALL SUPER</a></li>
+                  
+                   </ul>
+                   </li>
+
+
+
+
+             </ul>
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" language="javascript" type="text/javascript"></script>
+             <script src="https://codepen.io/Creaticode/pen/ecAmo.js" language="javascript" type="text/javascript"></script>
+           </body>
+</body>
+</html>
